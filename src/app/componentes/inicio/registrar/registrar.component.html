@@ -1,0 +1,112 @@
+<div class="principalContainer">
+    <div class="containerForm">
+        <div class="butonSelect">
+            <button class="selectRegister btn" (click)="controlVista='paciente'">Registro Paciente</button>
+            <button class="selectRegister btn " (click)="controlVista='psicologo'" >Registro Psicologo</button>
+        </div>
+        <!--***************************Formulario Psicologo********************************* -->
+        <form (ngSubmit)="registrarPsicologo()" [formGroup]="formPsicologo" *ngIf="controlVista=='psicologo'">
+            <div class="campo">
+                <div class="divisor">
+                    <h6>*Nombre:</h6>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="divisor">
+                    <h6>*Apellido:</h6>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>        
+            </div>
+            <div class="campo">
+                <div class="divisor">
+                    <h6>*Rut:</h6>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="divisor">
+                    <h6>Genero:</h6>
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option value="1">Masculino</option>
+                        <option value="2">Femenino</option>
+                        <option value="3">No lo se</option>
+                      </select>
+                </div>     
+            </div>
+            <div class="campo">
+                <div class="divisor">
+                    <h6>*Numero de telefono:</h6>
+                    <input type="tel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="divisor">
+                    <h6>*RNPI:</h6>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>              
+            </div>
+            <div class="campo">
+                <div class="divisor">
+                    <h6>*Email:</h6>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>       
+            </div>
+            <div class="campo">
+                <div class="divisor">
+                    <h6>*contraseña:</h6>
+                    <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>  
+                <div class="divisor">
+                    <h6>*Confirme contraseña:</h6>
+                    <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>     
+            </div>
+            <button class="btn btn-primary">Registrar</button>
+                si ya tienes una cuentaa ingresa <a href="">aqui</a>      
+       </form>
+       <!--***************************Formulario Paciente********************************* -->
+       <form (ngSubmit)="registrarPsicologo()" [formGroup]="formPaciente" *ngIf="controlVista=='paciente'">
+        <div class="campo">
+            <div class="divisor">
+                <h6>*Nombre:</h6>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="divisor">
+                <h6>*Apellido:</h6>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>        
+        </div>
+        <div class="campo">
+            <div class="divisor">
+                <h6>*Rut:</h6>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="divisor">
+                <h6>Genero:</h6>
+                <select class="form-select" id="inputGroupSelect01">
+                    <option value="1">Masculino</option>
+                    <option value="2">Femenino</option>
+                    <option value="3">No lo se</option>
+                  </select>
+            </div>        
+        </div>
+        <div class="campo">
+            <div class="divisor">
+                <h6>*Numero de telefono:</h6>
+                <input type="tel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="divisor">
+                <h6>*Email:</h6>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>        
+        </div>
+        <div class="campo">
+            <div class="divisor">
+                <h6>*contraseña:</h6>
+                <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div> 
+            <div class="divisor">
+                <h6>*Confirme contraseña:</h6>
+                <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>     
+        </div>
+        <button class="btn btn-primary">Registrar</button> <br>
+            si ya tienes una cuentaa ingresa <a href="">aqui</a>      
+   </form>
+    </div>
+ </div>

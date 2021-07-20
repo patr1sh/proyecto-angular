@@ -1,0 +1,34 @@
+.principalContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../../../assets/fondoLogin.jpg');
+    background-size:cover;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 60px;
+}
+form{
+    padding: 20px;
+
+}
+.containerForm{
+    margin-top: 60px;
+    width: 50%;
+    margin-right: 30px;
+    font-display: flex;
+    background-color: white;
+    justify-content: center;
+}
+.selectRegister{
+    text-align: center;
+    width: 50%;
+}
+.campo{
+    display: flex;
+    flex-direction: row;
+}
+.divisor{
+    width: 50%;
+    padding: 10px;
+}

@@ -1,0 +1,18 @@
+
+  <nav class="navbar navbar-expand navbar-light bg-light" aria-label="Second navbar example">
+    <div class="container-fluid">
+      
+    
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <img class="logo navbar-nav me-auto" src="../../../assets/logo.png" alt="">
+        <div>
+            <i class="bi bi-person-plus-fill" title="registrase" (click)="controlVistas='registrar'"></i>
+            <i class="bi bi-person-circle" title="iniciar sesion" (click)="controlVistas='logear'"></i>       
+        </div>
+          
+      </div>
+    </div>
+  </nav>
+  <app-logear *ngIf="controlVistas=='logear'"></app-logear>
+  <app-registrar *ngIf="controlVistas=='registrar'"></app-registrar>
+  <img *ngIf="controlVistas!='registrar' && controlVistas!='logear'" class="imgFondo" src="../../../assets/fondoInicio.jpg" alt="">

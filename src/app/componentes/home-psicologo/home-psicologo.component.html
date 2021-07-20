@@ -1,0 +1,85 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <!----------------------------------------------------->
+    <div class="bg-light border-right" id="sidebar-wrapper" style="text-align: center;">
+      <div class="sidebar-heading">
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img width="100" alt="ACME Logo" class="rounded-circle" src="../../../assets/logo.png">
+          </div>
+          <div>
+            <ul class="retornaMenu" *ngIf="opcionesMenu=='menuPerfil'" (click)="opcionesMenu='menuPrincipal'">
+              Volver al menu principal
+            </ul>
+            <img src="../../../assets/avatar.png" style="width: 120px;margin-top: 20px;" alt="">
+            <ul class="cambiaImagen" *ngIf="opcionesMenu=='menuPerfil'" (click)="controlVistas='cambiarImagen'">
+              cambiar imagen de perfil
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu principal-->
+      <div class="sidebar left ">
+        <ul class="list-sidebar bg-defoult" *ngIf="opcionesMenu=='menuPrincipal'">
+          <hr>
+          <li (click)="manejaMenuPacientes()"><a >Pacientes</a></li>
+          <hr>
+          <div class="submenu" *ngIf="menuPacientes">
+            <ul >
+              <li (click)="controlVistas='horasAgendadas'"><a>Horas agendadas</a></li>
+              <li (click)="controlVistas='agendarHoras'"><a>Agendar horas</a></li>
+              <li (click)="controlVistas='cancelarHoras'"><a>Cancelar horas agendadas</a></li>
+            </ul>
+            <hr>
+          </div>
+          <li (click)="controlVistas='fichasClinicas'"><a><i class="fas fa-home"></i>Fichas Clinicas</a></li>
+          <hr>
+          <li (click)="controlVistas='cargarHorario'"><a><i class="fas fa-home"></i>Cargar Horario</a></li>
+        </ul>
+
+        <!-- Menu opciones de perfil-->
+        <ul class="list-sidebar bg-defoult" *ngIf="opcionesMenu=='menuPerfil'">
+            <hr>
+            <li (click)="controlVistas='editarDatos'"><a >Editar datos personales</a></li>
+            <hr>
+            <li (click)="controlVistas='cambiarContrasenya'"><a><i class="fas fa-home"></i>Cambiar contraseña</a></li>
+            <hr>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <!-- Superior Bar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <!-- Superior menu -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            </li>
+          </ul>
+        </div>
+        <div>
+            Psicologo - Oscar zamorano
+            <img src="../../../assets/avatar.png" style="width: 60px; cursor: pointer;" (click)="opcionesMenu='menuPerfil'">
+            <i class="bi bi-box-arrow-right" style="font-size: 20px; margin-left: 10px; color: rgb(0, 174, 255); margin-right: 20px;"></i>
+        </div>
+      </nav>
+
+      <!-- Inner Content -->
+      <div class="container-fluid">
+        <app-horas-agendadas *ngIf="controlVistas=='horasAgendadas'"></app-horas-agendadas>
+        <app-agendar-horas *ngIf="controlVistas=='agendarHoras'"></app-agendar-horas>
+        <app-cancelar-horas *ngIf="controlVistas=='cancelarHoras'"></app-cancelar-horas>
+        <app-fichas-clinicas *ngIf="controlVistas=='fichasClinicas'"></app-fichas-clinicas>
+        <app-cargar-horario *ngIf="controlVistas=='cargarHorario'"></app-cargar-horario>
+        <app-editar-datos *ngIf="controlVistas=='editarDatos'"></app-editar-datos>
+        <app-cambiar-contrasenya *ngIf="controlVistas=='cambiarContrasenya'"></app-cambiar-contrasenya>
+        <app-cambiar-imagen *ngIf="controlVistas=='cambiarImagen'"></app-cambiar-imagen>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->

@@ -1,0 +1,12 @@
+<div class="principalContainer">
+   <h2>Iniciar Sesión</h2>
+   <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <h4>*Email:</h4>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> <br>
+        <h4>*Contraseña:</h4>
+        <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <a href="">¿olvidaste tu contraseña?</a> <br> <br>
+        <button type="submit" class="btn" [routerLink]="['/homePsicologo']">iniciar</button>
+        <a href="">¿no tienes aun una cuenta?</a>
+   </form>
+</div>

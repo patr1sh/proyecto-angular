@@ -1,0 +1,13 @@
+.imgFondo{
+  width: 100%;
+}
+.logo{
+  width: 100px;
+}
+i{
+  color: rgb(40, 94, 138);
+  font-size: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}

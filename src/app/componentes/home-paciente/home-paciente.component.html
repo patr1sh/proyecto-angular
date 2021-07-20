@@ -1,0 +1,81 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <!----------------------------------------------------->
+    <div class="bg-light border-right" id="sidebar-wrapper" style="text-align: center;">
+      <div class="sidebar-heading">
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img width="100" alt="ACME Logo" class="rounded-circle" src="../../../assets/logo.png">
+          </div>
+          <div>
+            <ul class="retornaMenu" *ngIf="opcionesMenu=='menuPerfil'" (click)="opcionesMenu='menuPrincipal'">
+              Volver al menu principal
+            </ul>
+            <img src="../../../assets/avatarPaciente.png" style="width: 120px;margin-top: 20px;" alt="">
+            <ul class="cambiaImagen" *ngIf="opcionesMenu=='menuPerfil'" (click)="controlVistas='cambiarImagenPaciente'">
+              cambiar imagen de perfil
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu principal-->
+      <div class="sidebar left ">
+        <ul class="list-sidebar bg-defoult" *ngIf="opcionesMenu=='menuPrincipal'">
+          <hr>
+          <li (click)="manejaMenuPacientes()"><a >Agendar hora</a></li>
+          <hr>
+          <div class="submenu" *ngIf="menuPacientes">
+            <ul >
+              <li (click)="controlVistas='buscarProfesional'"><a>Buscar profesional</a></li>
+              <li (click)="controlVistas='cancelarHoraPaciente'"><a>Cancelar hora</a></li>
+              <li (click)="controlVistas='horasAgendadasPaciente'"><a>Mis horas agendadas</a></li>
+            </ul>
+            <hr>
+          </div>
+        </ul>
+
+        <!-- Menu opciones de perfil-->
+        <ul class="list-sidebar bg-defoult" *ngIf="opcionesMenu=='menuPerfil'">
+            <hr>
+            <li (click)="controlVistas='editarDatosPaciente'"><a >Editar datos personales</a></li>
+            <hr>
+            <li (click)="controlVistas='cambiarContrasenyaPaciente'"><a><i class="fas fa-home"></i>Cambiar contraseña</a></li>
+            <hr>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <!-- Superior Bar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <!-- Superior menu -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            </li>
+          </ul>
+        </div>
+        <div>
+            Paciente - Marcela Diaz
+            <img src="../../../assets/avatarPaciente.png" style="width: 60px; cursor: pointer;" (click)="opcionesMenu='menuPerfil'">
+            <i class="bi bi-box-arrow-right" style="font-size: 20px; margin-left: 10px; color: rgb(0, 174, 255); margin-right: 20px;"></i>
+        </div>
+      </nav>
+
+      <!-- Inner Content -->
+      <div class="container-fluid">
+
+        <app-editar-datos-paciente *ngIf="controlVistas=='editarDatosPaciente'"></app-editar-datos-paciente>
+        <app-cambiar-contrasenya-paciente *ngIf="controlVistas=='cambiarContrasenyaPaciente'"></app-cambiar-contrasenya-paciente>
+        <app-cambiar-imagen-paciente *ngIf="controlVistas=='cambiarImagenPaciente'"></app-cambiar-imagen-paciente>
+        <app-buscar-profesional *ngIf="controlVistas=='buscarProfesional'"></app-buscar-profesional>
+        <app-cancelar-hora-paciente *ngIf="controlVistas=='cancelarHoraPaciente'"></app-cancelar-hora-paciente>
+        <app-horas-agendadas-paciente *ngIf="controlVistas=='horasAgendadasPaciente'"></app-horas-agendadas-paciente>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
